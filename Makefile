@@ -1,4 +1,4 @@
-MANAGE := poetry run python manage.py
+MANAGE := poetry run python3 manage.py
 
 .PHONY: test
 test:
@@ -16,7 +16,7 @@ db-clean:
 	@rm db.sqlite3 || true
 
 .PHONY: migrate
-migrate:
+migrate:@$(MANAGE) makemigrations
 	@$(MANAGE) migrate
 
 .PHONY: shell
