@@ -21,7 +21,7 @@ migrate:
 	
 .PHONY: makemigrate
 makemigrate:
-            @$(MANAGE) makemigrations
+	@$(MANAGE) makemigrations
 	    
 .PHONY: shell
 shell:
