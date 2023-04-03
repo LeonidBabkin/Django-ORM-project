@@ -16,9 +16,13 @@ db-clean:
 	@rm db.sqlite3 || true
 
 .PHONY: migrate
-migrate:@$(MANAGE) makemigrations
+migrate:
 	@$(MANAGE) migrate
-
+	
+.PHONY: makemigrate
+makemigrate:
+            @$(MANAGE) makemigrations
+	    
 .PHONY: shell
 shell:
 	@$(MANAGE) shell_plus --ipython
